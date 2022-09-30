@@ -1,0 +1,29 @@
+.InitiativeList {
+    display: flex;
+    margin: 32px;
+}
+
+.InitiativeList table {
+    border-collapse: collapse;
+}
+
+.InitiativeList td, .InitiativeList th {
+    border: 1px solid gray;
+    padding: 16px;
+}
+
+.InitiativeList th {
+    background: rosybrown;
+}
+
+.InitiativeListBody tr:nth-child(even) {
+    background: antiquewhite;
+}
+
+.InitiativeTrackerContainer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
