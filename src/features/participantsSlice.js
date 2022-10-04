@@ -41,10 +41,47 @@ export const participantsSlice = createSlice({
             return state;
         },
         updateParticipantInitiative: (state, action) => {
-            const {index, initiative} = action.payload;
+            const {id, initiative} = action.payload;
+
             for (let i = 0; i < state.length; i = i + 1) {
-                if (state[i].id === index) {
+                if (state[i].id === id) {
                     state[i].initiative = initiative;
+                    return state;
+                }
+            }
+
+            return state;
+        },
+        updateParticipantName: (state, action) => {
+            const {id, name} = action.payload;
+
+            for (let i = 0; i < state.length; i = i + 1) {
+                if (state[i].id === id) {
+                    state[i].name = name;
+                    return state;
+                }
+            }
+
+            return state;
+        },
+        updateParticipantArmor: (state, action) => {
+            const {id, armor} = action.payload;
+
+            for (let i = 0; i < state.length; i = i + 1) {
+                if (state[i].id === id) {
+                    state[i].armor = armor;
+                    return state;
+                }
+            }
+
+            return state;
+        },
+        updateParticipantHealth: (state, action) => {
+            const {id, health} = action.payload;
+
+            for (let i = 0; i < state.length; i = i + 1) {
+                if (state[i].id === id) {
+                    state[i].health = health;
                     return state;
                 }
             }
@@ -54,6 +91,6 @@ export const participantsSlice = createSlice({
     },
 });
 
-export const {addParticipant, updateParticipantInitiative} = participantsSlice.actions;
+export const {addParticipant, updateParticipantInitiative, updateParticipantName, updateParticipantArmor, updateParticipantHealth} = participantsSlice.actions;
 
 export const participantsReducer = participantsSlice.reducer;

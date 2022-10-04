@@ -1,9 +1,9 @@
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {updateInitiative} from "../features/addParticipantInitiativeSlice";
+import {updateInitiative} from "../../features/addParticipantSlice";
 
 export function InitiativeField () {
-    const addParticipantInitiative = useSelector(state => state.addParticipantInitiative);
+    const addParticipantInitiative = useSelector(state => state.addParticipant.initiative);
     const dispatch = useDispatch();
 
     function handleInitiativeChange (event) {
@@ -11,9 +11,9 @@ export function InitiativeField () {
     }
 
     return (
-        <label htmlFor="initiative">
-            Initiative
+        <>
+            <label htmlFor="initiative">Initiative</label>
             <input id="initiative" value={addParticipantInitiative} type="text" onChange={handleInitiativeChange}/>
-        </label>
+        </>
     );
 }

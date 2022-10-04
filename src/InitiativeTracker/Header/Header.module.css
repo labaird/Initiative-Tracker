@@ -13,10 +13,3 @@
     top: -145px;
     left: 125px;
 }
-
-.InitiativeTrackerContainer {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
