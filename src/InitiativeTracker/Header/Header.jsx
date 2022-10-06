@@ -1,6 +1,6 @@
-import styles from "./Header.module.css";
-import logo from "../../dnd-logo-red.png";
-import React from "react";
+import styles from './Header.module.css';
+import logo from '../../dnd-logo-red.png';
+import React from 'react';
 
 export function Header() {
     return <header className={styles.Header}>

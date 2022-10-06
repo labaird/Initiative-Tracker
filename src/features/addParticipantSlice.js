@@ -1,4 +1,4 @@
-import {createSlice} from "@reduxjs/toolkit";
+import {createSlice} from '@reduxjs/toolkit';
 
 export const addParticipantSlice = createSlice({
     name: 'addParticipant',
@@ -55,7 +55,7 @@ export const addParticipantSlice = createSlice({
     }
 });
 
-export const { updateInitiative, updateName, updateArmor, updateHealth, resetParticipant } = addParticipantSlice.actions;
+export const {updateInitiative, updateName, updateArmor, updateHealth, resetParticipant} = addParticipantSlice.actions;
 
 export const addParticipantReducer = addParticipantSlice.reducer;
 

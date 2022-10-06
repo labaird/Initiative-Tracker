@@ -1,11 +1,9 @@
-import {updateParticipantName} from "../../../../../features/participantsSlice";
+import {updateParticipantName} from '../../../../../features/participantsSlice';
 
 export function updateNameActionFactory(id, newName) {
-    const action = updateParticipantName({
+    return updateParticipantName({
         id: id,
         name: newName,
     });
+}
 
-    console.log('updateParticipantName returns', action);
-    return action;
-};

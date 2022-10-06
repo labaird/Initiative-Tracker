@@ -1,3 +1,2 @@
-import {Field} from "./Field";
+export {ArmorField} from './FieldCategories';
 
-export {Field};

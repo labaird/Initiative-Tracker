@@ -1,8 +1,8 @@
-import {createSlice} from "@reduxjs/toolkit";
+import {createSlice} from '@reduxjs/toolkit';
 
 let id = 1;
 
-function generateId () {
+function generateId() {
     id = id + 1;
 
     return id;
@@ -11,7 +11,8 @@ function generateId () {
 export const participantsSlice = createSlice({
     name: 'participants',
     initialState: [
-        {   id: 0,
+        {
+            id: 0,
             initiative: 5,
             name: 'Richard',
             armor: 18,
@@ -91,6 +92,12 @@ export const participantsSlice = createSlice({
     },
 });
 
-export const {addParticipant, updateParticipantInitiative, updateParticipantName, updateParticipantArmor, updateParticipantHealth} = participantsSlice.actions;
+export const {
+    addParticipant,
+    updateParticipantInitiative,
+    updateParticipantName,
+    updateParticipantArmor,
+    updateParticipantHealth
+} = participantsSlice.actions;
 
 export const participantsReducer = participantsSlice.reducer;

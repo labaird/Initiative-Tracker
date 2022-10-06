@@ -1,22 +1,24 @@
-.InitiativeList {
+.ParticipantsList {
     display: flex;
     margin: 32px;
 }
 
-.InitiativeList table {
+.ParticipantsList table {
     border-collapse: collapse;
+    width: 50vw;
 }
 
-.InitiativeList td, .InitiativeList th {
+.ParticipantsList td, .ParticipantsList th {
     border: 1px solid gray;
     padding: 16px;
+    text-align: center;
 }
 
-.InitiativeList th {
+.ParticipantsList th {
     background: rosybrown;
 }
 
-.InitiativeListBody tr:nth-child(even) {
+.ParticipantsListBody tr:nth-child(even) {
     background: antiquewhite;
 }
 
@@ -26,4 +28,8 @@
     flex-direction: column;
     align-items: center;
 
+}
+
+.Cell {
+    width: 2rem;
 }
