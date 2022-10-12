@@ -8,6 +8,14 @@ function generateId() {
     return id;
 }
 
+function findParticipant (participants, id) {
+    for (let i = 0; i < participants.length; i = i + 1) {
+        if (participants[i].id === id) {
+            return participants[i];
+        }
+    }
+}
+
 export const participantsSlice = createSlice({
     name: 'participants',
     initialState: [
@@ -44,48 +52,50 @@ export const participantsSlice = createSlice({
         updateParticipantInitiative: (state, action) => {
             const {id, initiative} = action.payload;
 
-            for (let i = 0; i < state.length; i = i + 1) {
-                if (state[i].id === id) {
-                    state[i].initiative = initiative;
-                    return state;
-                }
-            }
+            findParticipant(state, id).initiative = initiative;
 
             return state;
         },
         updateParticipantName: (state, action) => {
             const {id, name} = action.payload;
 
-            for (let i = 0; i < state.length; i = i + 1) {
-                if (state[i].id === id) {
-                    state[i].name = name;
-                    return state;
-                }
-            }
+            findParticipant(state, id).name = name;
 
             return state;
         },
         updateParticipantArmor: (state, action) => {
             const {id, armor} = action.payload;
 
-            for (let i = 0; i < state.length; i = i + 1) {
-                if (state[i].id === id) {
-                    state[i].armor = armor;
-                    return state;
-                }
-            }
+            findParticipant(state, id).armor = armor;
 
             return state;
         },
         updateParticipantHealth: (state, action) => {
             const {id, health} = action.payload;
 
-            for (let i = 0; i < state.length; i = i + 1) {
-                if (state[i].id === id) {
-                    state[i].health = health;
-                    return state;
-                }
+            findParticipant(state, id).health = health;
+
+            return state;
+
+        },
+        increaseParticipantHealth: (state, action) => {
+            const {id, modifier} = action.payload;
+            const participant = findParticipant(state, id);
+
+            participant.health = participant.health + modifier;
+            return state;
+        },
+        decreaseParticipantHealth: (state, action) => {
+            const {id, modifier} = action.payload;
+            const participant = findParticipant(state, id);
+            let newHealth = participant.health - modifier;
+
+            if (newHealth < 0) {
+                newHealth = 0;
             }
+
+
+            participant.health = newHealth;
 
             return state;
         }
@@ -97,7 +107,9 @@ export const {
     updateParticipantInitiative,
     updateParticipantName,
     updateParticipantArmor,
-    updateParticipantHealth
+    updateParticipantHealth,
+    increaseParticipantHealth,
+    decreaseParticipantHealth,
 } = participantsSlice.actions;
 
 export const participantsReducer = participantsSlice.reducer;

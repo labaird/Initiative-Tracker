@@ -1,0 +1,11 @@
+.Selected {
+    color: white;
+    background-color: black;
+    border-color: black;
+}
+
+.Unselected {
+    color: black;
+    background-color: white;
+    border-color: black;
+}

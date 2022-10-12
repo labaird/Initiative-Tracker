@@ -1,6 +1,7 @@
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {updateHealth} from '../../features/addParticipantSlice';
+import {HorizontalLayout} from '../../LayoutComponents/HorizontalLayout/HorizontalLayout';
 
 export function HealthField(props) {
     const {onSubmit} = props;
@@ -18,9 +19,9 @@ export function HealthField(props) {
     }
 
     return (
-        <div>
+        <HorizontalLayout>
             <label htmlFor="health">Health</label>
             <input id="health" type="text" value={health} onChange={handleChange} onKeyDown={handleEnterKey}/>
-        </div>
+        </HorizontalLayout>
     );
 }

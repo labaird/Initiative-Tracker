@@ -1,0 +1,22 @@
+.ParticipantsHealthModifier {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid saddlebrown;
+    padding: 2rem;
+    margin:16px;
+    background-color: burlywood;
+    width: 20rem;
+}
+
+.ParticipantsHealthModifier > header {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.ParticipantsHealthModifier > select {
+    text-align: center;
+    width: 50%;
+    margin-bottom: 1rem;
+}

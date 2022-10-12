@@ -1,10 +1,7 @@
 import styles from './ParticipantsList.module.css';
 import React from 'react';
-import {InitiativeField} from './Fields/FieldCategories/InitiativeField/InitiativeField';
-import {NameField} from './Fields/FieldCategories/NameField/NameField';
-import {ArmorField} from './Fields';
-import {HealthField} from './Fields/FieldCategories/HealthField/HealthField';
-import {useParticipants} from './useParticipants';
+import {InitiativeField, NameField, ArmorField, HealthField} from './Fields';
+import {useParticipants} from '../useParticipants';
 
 export function ParticipantsList() {
     const participants = useParticipants();

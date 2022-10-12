@@ -7,7 +7,7 @@ import {NameField} from './NameField';
 import {ArmorField} from './ArmorField';
 import {HealthField} from './HealthField';
 import {resetParticipant} from '../../features/addParticipantSlice';
-import {HorizontalContainer} from '../../LayoutComponents/HorizontalContainer/HorizontalContainer';
+import {HorizontalLayout} from '../../LayoutComponents/HorizontalLayout/HorizontalLayout';
 
 export function ParticipantAdder() {
     const {initiative, name, armor, health} = useSelector(state => state.addParticipant);
@@ -30,13 +30,13 @@ export function ParticipantAdder() {
 
     return (
         <div className={styles.ParticipantAdder}>
-            <HorizontalContainer>
+            <HorizontalLayout>
                 <InitiativeField/>
                 <NameField onSubmit={handleAddParticipantSubmit}/>
                 <ArmorField onSubmit={handleAddParticipantSubmit}/>
                 <HealthField onSubmit={handleAddParticipantSubmit}/>
                 <button className={styles.button} onClick={handleAddParticipantSubmit}>Add Participant</button>
-            </HorizontalContainer>
+            </HorizontalLayout>
         </div>
     );
 }

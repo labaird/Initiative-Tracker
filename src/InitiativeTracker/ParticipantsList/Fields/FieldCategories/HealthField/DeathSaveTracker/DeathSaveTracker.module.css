@@ -1,0 +1,13 @@
+.DeathSaveTracker button {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 2px;
+    margin-left: 2px;
+    margin-top: 2px;
+}
+
+.DeathSaveTracker header {
+    width: 5rem;
+    text-align: start;
+}

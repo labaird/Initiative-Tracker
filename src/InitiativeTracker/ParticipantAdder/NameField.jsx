@@ -1,6 +1,7 @@
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {updateName} from '../../features/addParticipantSlice';
+import {HorizontalLayout} from '../../LayoutComponents/HorizontalLayout/HorizontalLayout';
 
 export function NameField(props) {
     const {onSubmit} = props;
@@ -18,9 +19,9 @@ export function NameField(props) {
     }
 
     return (
-        <div>
+        <HorizontalLayout>
             <label htmlFor="name">Name</label>
             <input id="name" type="text" value={name} onChange={handleNameChange} onKeyDown={handleEnterKey}/>
-        </div>
+        </HorizontalLayout>
     );
 }

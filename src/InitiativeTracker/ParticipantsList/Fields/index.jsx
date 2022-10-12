@@ -1,2 +1,2 @@
-export {ArmorField} from './FieldCategories';
+export {ArmorField, InitiativeField, NameField, HealthField} from './FieldCategories';
 

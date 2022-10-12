@@ -1,6 +1,7 @@
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {updateArmor} from '../../features/addParticipantSlice';
+import {HorizontalLayout} from '../../LayoutComponents/HorizontalLayout/HorizontalLayout';
 
 export function ArmorField(props) {
     const {onSubmit} = props;
@@ -18,9 +19,9 @@ export function ArmorField(props) {
     }
 
     return (
-        <div>
+        <HorizontalLayout>
             <label htmlFor="armor">Armor</label>
             <input id="armor" type="text" value={armor} onChange={handleChange} onKeyDown={handleEnterKey}/>
-        </div>
+        </HorizontalLayout>
     );
 }
