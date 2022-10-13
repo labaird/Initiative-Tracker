@@ -17,15 +17,16 @@ export function ParticipantsHealthModifier (props) {
         }
 
         for (let i = 0; i < participants.length; i = i + 1) {
-            if (participants[i][newId] === id) {
+            if (participants[i].id === newId) {
                 return participants[i];
             }
         }
+
+        throw new Error('ParticipantsHealthModifier: Participant does not exist');
     }
 
     function handleSelection (event) {
-        const participant = findParticipant(event.target.value);
-
+        const participant = findParticipant(participants, event.target.value);
         setParticipant({...participant});
     }
 
@@ -34,11 +35,12 @@ export function ParticipantsHealthModifier (props) {
             <header>
                 Modify Health
             </header>
-            <select value={participant.name} onChange={handleSelection}>
+            <label htmlFor={"participant-select"} style={{display: 'none'}}>Choose a Participant:</label>
+            <select name={participant.name} onChange={handleSelection} id={"participant-select"}>
                 {participants.map((participant) => {
                     const {name, id} = participant;
 
-                    return <option key={id} value={id}>{name}</option>
+                    return <option key={id} value={id}>{name}</option>;
                 })}
             </select>
             <ModifyHealthField id={participant.id}/>

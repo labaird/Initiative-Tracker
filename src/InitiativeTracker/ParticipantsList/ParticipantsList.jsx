@@ -1,7 +1,16 @@
 import styles from './ParticipantsList.module.css';
 import React from 'react';
-import {InitiativeField, NameField, ArmorField, HealthField} from './Fields';
 import {useParticipants} from '../useParticipants';
+import * as PropTypes from 'prop-types';
+import {ParticipantRow} from './ParticipantRow';
+//TODO: Should I keep this?
+ParticipantRow.propTypes = {
+    initiative: PropTypes.any,
+    id: PropTypes.any,
+    name: PropTypes.any,
+    health: PropTypes.any,
+    armor: PropTypes.any
+};
 
 export function ParticipantsList() {
     const participants = useParticipants();
@@ -22,20 +31,8 @@ export function ParticipantsList() {
                     const {initiative, name, armor, health, id} = participant;
 
                     return (
-                        <tr key={id}>
-                            <td className={styles.Cell}>
-                                <InitiativeField initiative={initiative} id={id}/>
-                            </td>
-                            <td className={styles.Cell}>
-                                <NameField name={name} id={id}/>
-                            </td>
-                            <td className={styles.Cell}>
-                                <ArmorField armor={armor} id={id}/>
-                            </td>
-                            <td className={styles.Cell}>
-                                <HealthField health={health} id={id}/>
-                            </td>
-                        </tr>
+                        <ParticipantRow key={id} initiative={initiative} id={id} name={name} health={health}
+                                        armor={armor}/>
                     );
                 })}
                 </tbody>

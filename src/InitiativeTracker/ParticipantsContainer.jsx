@@ -4,7 +4,6 @@ import {useParticipants} from './useParticipants';
 export function ParticipantsContainer (props) {
     const {children} = props;
     const participants = useParticipants();
-    console.log('children is', children);
 
     return (
         <>

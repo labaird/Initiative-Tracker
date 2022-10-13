@@ -3,15 +3,15 @@ import {DeathSaveButton} from './DeathSaveButton';
 import React from 'react';
 
 export function Saves(props) {
-    const {type} = props;
+    const {type, setActiveStatus} = props;
 
     return (
         <HorizontalLayout>
             <header>
                 {type === 'successes' ? 'Successes' : 'Failures'}
             </header>
-            <DeathSaveButton/>
-            <DeathSaveButton/>
-            <DeathSaveButton/>
+            <DeathSaveButton setActiveStatus={setActiveStatus}/>
+            <DeathSaveButton setActiveStatus={setActiveStatus}/>
+            <DeathSaveButton setActiveStatus={setActiveStatus}/>
         </HorizontalLayout>);
 }

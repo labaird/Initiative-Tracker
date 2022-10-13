@@ -11,3 +11,7 @@
     width: 5rem;
     text-align: start;
 }
+
+.DeathSaveTracker div {
+    justify-content: center;
+}

@@ -4,15 +4,16 @@ import {updateParticipantHealth} from '../../../../../features/participantsSlice
 import {DeathSaveTracker} from './DeathSaveTracker';
 
 export function HealthField(props) {
-    const {id, health} = props;
+    const {id, health, isActive, setActiveStatus} = props;
 
     if (health > 0) {
         return <Field id={id} value={health} updateActionFactory={updateHealthActionFactory}/>;
     }
 
     return (
-        <DeathSaveTracker />
+        <DeathSaveTracker setActiveStatus={setActiveStatus}/>
     );
+
 }
 
 function updateHealthActionFactory(id, newHealth) {

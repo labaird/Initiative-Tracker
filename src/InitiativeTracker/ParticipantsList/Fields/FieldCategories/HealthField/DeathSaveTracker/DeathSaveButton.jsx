@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import styles from './DeathSaveButton.module.css';
 
-export function DeathSaveButton () {
+export function DeathSaveButton (props) {
     const [isSelected, setIsSelected] = useState(false);
+
     let style = styles.Unselected;
 
     if (isSelected) {
