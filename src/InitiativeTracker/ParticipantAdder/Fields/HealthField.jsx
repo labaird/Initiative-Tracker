@@ -1,7 +1,7 @@
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {updateHealth} from '../../features/addParticipantSlice';
-import {HorizontalLayout} from '../../LayoutComponents/HorizontalLayout/HorizontalLayout';
+import {updateHealth} from '../../../features/addParticipantSlice';
+import {HorizontalLayout} from '../../../LayoutComponents/HorizontalLayout/HorizontalLayout';
 
 export function HealthField(props) {
     const {onSubmit} = props;

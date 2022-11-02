@@ -1,8 +1,9 @@
 import styles from './ParticipantsList.module.css';
-import React from 'react';
+import React, {useState} from 'react';
 import {useParticipants} from '../useParticipants';
 import * as PropTypes from 'prop-types';
 import {ParticipantRow} from './ParticipantRow';
+import {NextButton} from './NextButton';
 //TODO: Should I keep this?
 ParticipantRow.propTypes = {
     initiative: PropTypes.any,
@@ -14,9 +15,21 @@ ParticipantRow.propTypes = {
 
 export function ParticipantsList() {
     const participants = useParticipants();
+    const [nextParticipantIndex, setNextParticipantIndex] = useState(0);
+
+    function updateNextParticipant () {
+        let newIndex = nextParticipantIndex + 1;
+
+        if (newIndex > participants.length - 1) {
+            newIndex = 0;
+        }
+
+        setNextParticipantIndex(newIndex);
+    }
 
     return (
         <section className={styles.ParticipantsList}>
+            <NextButton updateNextParticipant={updateNextParticipant} />
             <table>
                 <thead>
                 <tr>
@@ -27,12 +40,16 @@ export function ParticipantsList() {
                 </tr>
                 </thead>
                 <tbody className={styles.ParticipantsListBody}>
-                {participants.map((participant) => {
-                    const {initiative, name, armor, health, id} = participant;
+                {participants.map((participant, index) => {
+                    const {initiative, name, armor, health, id, saves, status} = participant;
+                    let isNext = false;
+
+                    if (index === nextParticipantIndex) {
+                        isNext = true;
+                    }
 
                     return (
-                        <ParticipantRow key={id} initiative={initiative} id={id} name={name} health={health}
-                                        armor={armor}/>
+                        <ParticipantRow initiative={initiative} name={name} armor={armor} health={health} id={id} saves={saves} status={status} isNext={isNext}/>
                     );
                 })}
                 </tbody>

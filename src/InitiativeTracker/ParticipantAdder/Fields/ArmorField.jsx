@@ -1,7 +1,7 @@
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {updateArmor} from '../../features/addParticipantSlice';
-import {HorizontalLayout} from '../../LayoutComponents/HorizontalLayout/HorizontalLayout';
+import {updateArmor} from '../../../features/addParticipantSlice';
+import {HorizontalLayout} from '../../../LayoutComponents/HorizontalLayout/HorizontalLayout';
 
 export function ArmorField(props) {
     const {onSubmit} = props;

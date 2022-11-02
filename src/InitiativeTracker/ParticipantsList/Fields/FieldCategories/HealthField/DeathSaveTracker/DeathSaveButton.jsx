@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styles from './DeathSaveButton.module.css';
 
 export function DeathSaveButton (props) {
-    const [isSelected, setIsSelected] = useState(false);
+    const {isSelected, updateSaves} = props;
 
     let style = styles.Unselected;
 
@@ -10,9 +10,10 @@ export function DeathSaveButton (props) {
         style = styles.Selected;
     }
 
-    function toggleSelection () {
-        setIsSelected(!isSelected);
+    function handleClick () {
+        updateSaves(isSelected);
     }
 
-    return (<button onClick={toggleSelection} className={style}></button>);
+
+    return (<button onClick={handleClick} className={style}></button>);
 }

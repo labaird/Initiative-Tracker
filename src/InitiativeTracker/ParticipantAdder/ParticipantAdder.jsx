@@ -2,10 +2,7 @@ import styles from './ParticipantAdder.module.css';
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {addParticipant} from '../../features/participantsSlice';
-import {InitiativeField} from './InitiativeField';
-import {NameField} from './NameField';
-import {ArmorField} from './ArmorField';
-import {HealthField} from './HealthField';
+import {InitiativeField, NameField, ArmorField, HealthField} from './Fields';
 import {resetParticipant} from '../../features/addParticipantSlice';
 import {HorizontalLayout} from '../../LayoutComponents/HorizontalLayout/HorizontalLayout';
 

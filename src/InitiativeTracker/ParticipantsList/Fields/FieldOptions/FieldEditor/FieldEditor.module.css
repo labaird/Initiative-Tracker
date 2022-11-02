@@ -1,7 +1,13 @@
 .Column {
-    width: 80px;
+    width: 100px;
+}
+
+.Field {
+    display: flex;
 }
 
 .Input {
-    width: 20px;
+    flex: 1;
+    margin-right: 8px;
+    padding: 8px;
 }

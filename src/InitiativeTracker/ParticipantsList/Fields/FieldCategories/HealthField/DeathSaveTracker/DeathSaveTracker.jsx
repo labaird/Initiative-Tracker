@@ -1,14 +1,16 @@
 import React from 'react';
-import {Saves} from './Saves';
+import {SuccessSaves} from './SuccessSaves';
 import styles from './DeathSaveTracker.module.css';
+import {FailureSaves} from './FailureSaves';
 
 export function DeathSaveTracker (props) {
-    const {setActiveStatus} = props;
+    const {id, saves} = props;
+    const {successes, failures} = saves;
 
     return (
         <div className={styles.DeathSaveTracker}>
-            <Saves type="successes" setActiveStatus={setActiveStatus}/>
-            <Saves type="failures" setActiveStatus={setActiveStatus} />
+            <SuccessSaves id={id} values={successes} saves={saves} />
+            <FailureSaves id={id} values={failures} saves={saves} />
         </div>
     );
 }

@@ -1,5 +1,4 @@
 .ParticipantsList {
-    display: flex;
     margin: 32px;
 }
 
@@ -18,10 +17,6 @@
     background: rosybrown;
 }
 
-.ParticipantsListBody tr:nth-child(even) {
-    background: antiquewhite;
-}
-
 .InitiativeTrackerContainer {
     height: 100vh;
     display: flex;
@@ -32,4 +27,8 @@
 
 .Cell {
     width: 2rem;
+}
+
+.isSelected {
+    background: antiquewhite;
 }

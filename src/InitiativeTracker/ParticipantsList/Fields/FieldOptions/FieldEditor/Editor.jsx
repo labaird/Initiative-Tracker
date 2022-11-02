@@ -10,12 +10,15 @@ export function Editor(props) {
     const dispatch = useDispatch();
 
     function handleChange(event) {
+        console.log("change is", typeof event.target.value);
         setInputValue(event.target.value);
     }
 
     function handleSubmit() {
         if (!isRequired || (isRequired && inputValue.trim())) {
-            dispatch(updateActionFactory(id, inputValue));
+            if (inputValue !== (value + '')) {
+                dispatch(updateActionFactory(id, inputValue));
+            }
             onSave();
         }
     }
@@ -27,12 +30,12 @@ export function Editor(props) {
     }
 
     return (
-        <>
+        <div className={styles.Field}>
             <input className={styles.Input} type="text" value={inputValue} onChange={handleChange}
                    onKeyDown={handleEnterKey}/>
             <button onClick={handleSubmit}>
                 OK
             </button>
-        </>
+        </div>
     );
 }

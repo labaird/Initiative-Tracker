@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {HorizontalLayout} from '../../../LayoutComponents/HorizontalLayout/HorizontalLayout';
 import {useDispatch} from 'react-redux';
-import {decreaseParticipantHealth, increaseParticipantHealth} from '../../../features/participantsSlice';
-import style from './ModifyHealthField.module.css';
+import {damageParticipant, healParticipant} from '../../../features/participantsSlice';
+import styles from './ModifyHealthField.module.css';
 
 export function ModifyHealthField (props) {
     const {id} = props;
@@ -25,9 +25,9 @@ export function ModifyHealthField (props) {
 
     return (
         <HorizontalLayout>
-            <label htmlFor="healthModifier" className={style.InputLabel}>Amount:</label>
-            <input id="healthModifier" className={style.Input} value={modifyValue} onChange={handleChange}/>
-            <HorizontalLayout className={style.SubmitButtons}>
+            <label htmlFor="healthModifier" className={styles.InputLabel}>Amount:</label>
+            <input id="healthModifier" className={styles.Input} value={modifyValue} onChange={handleChange}/>
+            <HorizontalLayout className={styles.SubmitButtons}>
                 <button onClick={handleIncrease}>Add</button>
                 <button onClick={handleDecrease}>Remove</button>
             </HorizontalLayout>
@@ -42,7 +42,7 @@ function increaseHealthActionFactory(id, modifier) {
         newValue = parseInt(modifier, 10);
     }
 
-    return increaseParticipantHealth({
+    return healParticipant({
         id: id,
         modifier: newValue,
     });
@@ -54,7 +54,7 @@ function decreaseHealthActionFactory(id, modifier) {
         newValue = parseInt(modifier, 10);
     }
 
-    return decreaseParticipantHealth({
+    return damageParticipant({
         id: id,
         modifier: newValue,
     });
